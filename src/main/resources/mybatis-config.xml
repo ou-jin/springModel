@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+  
+		<typeAlias alias="Integer" type="java.lang.Integer" />
+		<typeAlias alias="Long" type="java.lang.Long" />
+		<typeAlias alias="HashMap" type="java.util.HashMap" />
+		<typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+		<typeAlias alias="ArrayList" type="java.util.ArrayList" />
+		<typeAlias alias="LinkedList" type="java.util.LinkedList" />
+        <typeAlias alias="pd" type= "spring.unit.PageData" />
+        <typeAlias alias="UserInfo" type="spring.domain.userInfo" />
+ 		<typeAlias alias="MeauInfo" type="spring.domain.meauInfo" />
+ 		<typeAlias alias="userTokenInfo" type="spring.domain.userTokenInfo" />
+ 		<typeAlias alias="sysUserInfo" type="spring.domain.sys.sysUserInfo" />
+	</typeAliases>
+	
+    <mappers>  
+         <mapper resource="mybatis/meauMapper.xml"/>
+         <mapper resource="mybatis/userMapper.xml"/>
+         <mapper resource="mybatis/imListMapper.xml"/>
+    	 <mapper resource="mybatis/commentMapper.xml"/>
+    	 <mapper resource="mybatis/tokenMapper.xml"/>
+    	 <mapper resource="sys/sysUserMapper.xml"/>
+    </mappers> 
+</configuration>
+ 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tokenMapper">
+	<select id="queryByToken" resultType="sysUserInfo">
+		select * from sys_user where token = #{token}
+	</select>
+	<select id="queryMeauByToken" resultType="String">
+		SELECT
+			a.perms
+		FROM
+			sys_meau AS a
+		INNER JOIN
+			sys_role_meau AS b
+		INNER JOIN
+			sys_user AS c
+		INNER JOIN
+			sys_role AS d
+		ON
+			c.role_id=d.role_id
+		AND
+			d.role_id=b.role_id
+		AND
+			b.meau_id=a.id
+		WHERE
+			c.token=#{token}
+	</select>
+</mapper>

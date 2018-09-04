@@ -1,0 +1,29 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="sysUserMapper" >
+	<select id="selectUserInfo"  parameterType="String" resultType="sysUserInfo">
+		 select
+			user_id,
+	        username,
+	        password,
+	        manager_designation,
+	        role_id,
+			role_name,
+	        power_start,
+	        power_end,
+	        create_time,
+	        del_flag
+		FROM
+			sys_user 
+		 where 
+		   	username=#{userName}
+	</select>
+	<update id="updateToken" parameterType="sysUserInfo">
+		UPDATE
+			sys_user_token
+		SET
+			token=#{token},
+			expire_time=
+		WHERE
+			user_id=#{user_id}
+	</update>
+	</mapper>
